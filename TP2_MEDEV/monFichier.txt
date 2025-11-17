@@ -1,1 +1,2 @@
 ma dexieme version
+Modification dans newImage pour C2
