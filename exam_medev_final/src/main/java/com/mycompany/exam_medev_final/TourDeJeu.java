@@ -21,6 +21,7 @@ public class TourDeJeu {
     private final int maxErreurs;
 
     /**
+     * Récupère le mot secret et le nombre maximal d'erreurs autorisées.
      * @param motSecret Le mot à deviner.
      * @param maxErreurs Nombre d'erreurs autorisées avant la défaite.
      */
@@ -49,16 +50,19 @@ public class TourDeJeu {
 
     // Getters et Setters pour la logique métier
     /**
+     * Retourne le mot secret complet.
      * @return Le mot secret complet à deviner.
      */
     public String getMotSecret() { return motSecret; }
 
     /**
+     * Retourne l'ensemble des lettres déjà proposées par le joueur.
      * @return L'ensemble des caractères déjà proposés par le joueur.
      */
     public Set<Character> getLettresProposees() { return lettresProposees; }
 
     /**
+     * Retourne le nombre d'erreurs commises jusqu'à présent.
      * @return Le nombre total d'erreurs commises jusqu'à présent.
      */
     public int getErreursCommises() { return erreursCommises; }
@@ -75,6 +79,7 @@ public class TourDeJeu {
     public int getErreursRestantes() { return maxErreurs - erreursCommises; }
 
     /**
+     * Retourne le nombre maximum d'erreurs autorisées pour la partie.
      * @return Le nombre maximum d'erreurs autorisées pour la partie.
      */
     public int getMaxErreurs() { return maxErreurs; }
