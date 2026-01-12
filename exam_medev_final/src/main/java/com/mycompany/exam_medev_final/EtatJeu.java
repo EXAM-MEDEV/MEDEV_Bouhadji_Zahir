@@ -4,10 +4,10 @@ package com.mycompany.exam_medev_final;
  * Gère la logique métier, les validations et les transitions d'état du jeu[cite: 68, 93].
  */
 public class EtatJeu {
-    private final EtatJeu etat;
+    private final TourDeJeu etat;
 
     public EtatJeu(String mot, int maxErreurs) {
-        this.etat = new EtatJeu(mot, maxErreurs);
+        this.etat = new TourDeJeu(mot, maxErreurs);
     }
 
     /**
@@ -42,5 +42,5 @@ public class EtatJeu {
      */
     public boolean estGagne() { return !etat.getMotAffiche().contains("_"); }
     public boolean estPerdu() { return etat.getErreursCommises() >= etat.getMaxErreurs(); }
-    public EtatJeu getEtat() { return etat; }
+    public TourDeJeu getEtat() { return etat; }
 }
