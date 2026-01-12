@@ -56,6 +56,7 @@ jobs:
           cache: maven
 
       - name: Build and analyze
+        working-directory: exam_medev_final
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
