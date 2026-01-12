@@ -3,7 +3,7 @@ package com.mycompany.exam_medev_final;
 import java.util.Scanner;
 
 /**
- * Gère l'affichage et les interactions avec l'utilisateur[cite: 53].
+ * Gère l'affichage et les interactions avec l'utilisateur.
  */
 public class InterfaceTexte {
 
@@ -20,7 +20,7 @@ public class InterfaceTexte {
     /**
      * Initialise et démarre une nouvelle session de jeu.
      *
-     * * @param motSecret Le mot que le joueur doit découvrir.
+     * @param motSecret Le mot que le joueur doit découvrir.
      * @param maxErreurs Le nombre de tentatives autorisées avant la fin de la
      * partie.
      */

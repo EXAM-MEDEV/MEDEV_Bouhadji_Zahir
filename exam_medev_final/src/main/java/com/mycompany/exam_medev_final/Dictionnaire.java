@@ -10,16 +10,16 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Charge les mots depuis un fichier et sélectionne un mot aléatoire[cite: 80, 82].
+ * Charge les mots depuis un fichier et sélectionne un mot aléatoire.
  */
 public class Dictionnaire {
     /** Liste stockant l'ensemble des mots chargés depuis le fichier dictionnaire. */
     private List<String> listeMots = new ArrayList<>();
 
     /**
-     * Charge les mots en ignorant les lignes vides et les mots invalides[cite: 81].
+     * Charge les mots en ignorant les lignes vides et les mots invalides.
      * @param chemin Chemin du fichier de dictionnaire.
-     * @throws IOException Si le fichier est introuvable ou illisible. // Ajoutez cette ligne
+     * @throws IOException Si le fichier est introuvable ou illisible.
     */
     public void chargerMots(String chemin) throws IOException {
         File file = new File(chemin);

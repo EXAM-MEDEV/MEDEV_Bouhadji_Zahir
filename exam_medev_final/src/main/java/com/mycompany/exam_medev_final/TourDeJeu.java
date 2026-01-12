@@ -8,14 +8,21 @@ import java.util.Set;
  * Gère le mot secret, les tentatives et le compteur d'erreurs.
  */
 public class TourDeJeu {
+    /** Le mot à découvrir par le joueur. */
     private final String motSecret;
+
+    /** Ensemble des lettres déjà tentées par le joueur pour éviter les doublons. */
     private final Set<Character> lettresProposees;
+
+    /** Compteur du nombre d'erreurs effectuées depuis le début de la partie. */
     private int erreursCommises;
+
+    /** Limite d'erreurs autorisées avant que la partie ne soit déclarée perdue. */
     private final int maxErreurs;
 
     /**
      * @param motSecret Le mot à deviner.
-     * @param maxErreurs Nombre d'erreurs autorisées avant la défaite[cite: 45].
+     * @param maxErreurs Nombre d'erreurs autorisées avant la défaite.
      */
     public TourDeJeu(String motSecret, int maxErreurs) {
         this.motSecret = motSecret.toUpperCase();
@@ -25,7 +32,7 @@ public class TourDeJeu {
     }
 
     /**
-     * Génère la représentation visuelle du mot (ex: A _ _ E)[cite: 55, 74].
+     * Génère la représentation visuelle du mot (ex: A _ _ E).
      * @return Le mot avec les lettres non découvertes masquées par des underscores.
      */
     public String getMotAffiche() {
@@ -41,10 +48,34 @@ public class TourDeJeu {
     }
 
     // Getters et Setters pour la logique métier
+    /**
+     * @return Le mot secret complet à deviner.
+     */
     public String getMotSecret() { return motSecret; }
+
+    /**
+     * @return L'ensemble des caractères déjà proposés par le joueur.
+     */
     public Set<Character> getLettresProposees() { return lettresProposees; }
+
+    /**
+     * @return Le nombre total d'erreurs commises jusqu'à présent.
+     */
     public int getErreursCommises() { return erreursCommises; }
+
+    /**
+     * Incrémente de 1 le compteur d'erreurs commises.
+     */
     public void incrementerErreurs() { this.erreursCommises++; }
+
+    /**
+     * Calcule le nombre de tentatives restantes.
+     * @return La différence entre le maximum autorisé et les erreurs commises.
+     */
     public int getErreursRestantes() { return maxErreurs - erreursCommises; }
+
+    /**
+     * @return Le nombre maximum d'erreurs autorisées pour la partie.
+     */
     public int getMaxErreurs() { return maxErreurs; }
 }
