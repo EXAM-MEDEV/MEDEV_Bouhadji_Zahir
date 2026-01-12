@@ -13,6 +13,8 @@ public class InterfaceTexte {
         moteur = new EtatJeu(motSecret, maxErreurs);
 
         while (!moteur.estGagne() && !moteur.estPerdu()) {
+            // 1. Affichage du dessin
+            dessinerPendu(moteur.getEtat().getErreursCommises());
             System.out.println("\nMot : " + moteur.getEtat().getMotAffiche());
             System.out.println("Tentatives : " + moteur.getEtat().getLettresProposees());
             System.out.println("Erreurs restantes : " + moteur.getEtat().getErreursRestantes());
@@ -32,4 +34,37 @@ public class InterfaceTexte {
             System.out.println("Perdu ! Le mot était : " + motSecret);
         }
     }
+
+    /**
+ * Affiche le dessin de la potence en fonction du nombre d'erreurs.
+ * @param nbErreurs Nombre d'erreurs commises par le joueur.
+ */
+private void dessinerPendu(int nbErreurs) {
+    switch (nbErreurs) {
+        case 0:
+            System.out.println("\n\n\n\n\n========");
+            break;
+        case 1:
+            System.out.println("  +---+\n  |   |\n      |\n      |\n      |\n      |\n========");
+            break;
+        case 2:
+            System.out.println("  +---+\n  |   |\n  O   |\n      |\n      |\n      |\n========");
+            break;
+        case 3:
+            System.out.println("  +---+\n  |   |\n  O   |\n  |   |\n      |\n      |\n========");
+            break;
+        case 4:
+            System.out.println("  +---+\n  |   |\n  O   |\n /|   |\n      |\n      |\n========");
+            break;
+        case 5:
+            System.out.println("  +---+\n  |   |\n  O   |\n /|\\  |\n      |\n      |\n========");
+            break;
+        case 6:
+            System.out.println("  +---+\n  |   |\n  O   |\n /|\\  |\n /    |\n      |\n========");
+            break;
+        case 7:
+            System.out.println("  +---+\n  |   |\n  O   |\n /|\\  |\n / \\  |\n      |\n========");
+            break;
+    }
+}
 }
