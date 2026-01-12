@@ -56,12 +56,11 @@ jobs:
           cache: maven
 
       - name: Build and analyze
-        working-directory: exam_medev_final
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          mvn -B clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
+          mvn -B -f exam_medev_final/pom.xml clean verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar \
           -Dsonar.projectKey=EXAM-MEDEV_MEDEV_Bouhadji_Zahir \
           -Dsonar.organization=exam-medev \
           -Dsonar.java.binaries=target/classes \
