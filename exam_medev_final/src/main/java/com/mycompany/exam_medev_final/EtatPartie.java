@@ -6,10 +6,19 @@ package com.mycompany.exam_medev_final;
 
 /**
  *
- * @author user
+ * @author Yasmine Bouhadji & Ikram Zahir
+ */
+
+/**
+ * Représente les différents états possibles d'une partie de pendu.
  */
 public enum EtatPartie {
+    /** La partie est toujours en cours, le joueur peut encore proposer des lettres. */
     EN_COURS,
+    
+    /** Le joueur a trouvé toutes les lettres du mot avant d'atteindre le maximum d'erreurs. */
     GAGNEE,
+    
+    /** Le joueur a épuisé son nombre d'essais sans trouver le mot. */
     PERDUE
 }

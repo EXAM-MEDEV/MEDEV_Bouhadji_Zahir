@@ -6,7 +6,17 @@ package com.mycompany.exam_medev_final;
 import java.io.IOException;
 import java.util.Scanner;
 
+/**
+ * Classe principale de l'application Pendu.
+ * Cette classe contient le point d'entrée du programme et orchestre 
+ * l'interaction entre l'utilisateur et le moteur de jeu.
+ */
 public class Main {
+    /**
+     * Point d'entrée principal de l'application.
+     * Initialise le dictionnaire, choisit un mot et lance la boucle de jeu.
+     * * @param args Arguments de la ligne de commande (non utilisés ici).
+     */
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         InterfaceTexte interfaceJeu = new InterfaceTexte();
