@@ -25,7 +25,7 @@ public class Main {
 
         if (choix == 1) {
             try {
-                // Remplacez "mots.txt" par le chemin réel de votre fichier
+                // Chemin réel de votre fichier
                 dico.chargerMots("mots.txt"); 
                 motatrouver = dico.choisirMotAleatoire();
             } catch (IOException e) {
