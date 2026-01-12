@@ -1,0 +1,40 @@
+@options
+@packages
+-encoding
+'UTF-8'
+-private
+--release
+17
+-sourcepath
+'/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/src/main/java:/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/generated-sources/annotations'
+-author
+-bottom
+'Copyright &#169; 2026. All rights reserved.'
+-charset
+'UTF-8'
+-d
+'/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs'
+-docencoding
+'UTF-8'
+-doctitle
+'exam_medev_final 1.0-SNAPSHOT API'
+-nohelp
+-use
+-version
+-windowtitle
+'exam_medev_final 1.0-SNAPSHOT API'
+com.mycompany.exam_medev_final
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/src/main/java = 1768222914838
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/generated-sources/annotations = 1768231349083
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/tag-search-index.js = 1768231351199
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/overview-tree.html = 1768231351192
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/module-search-index.js = 1768231351198
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/index.html = 1768231351206
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/package-search-index.js = 1768231351198
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/index-all.html = 1768231351204
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/allpackages-index.html = 1768231351198
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/member-search-index.js = 1768231351199
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/element-list = 1768231351173
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/search.html = 1768231351205
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/allclasses-index.html = 1768231351197
+/Users/yasminebouhadji/MEDEV/MEDEV_Bouhadji_Zahir/exam_medev_final/target/site/apidocs/type-search-index.js = 1768231351199

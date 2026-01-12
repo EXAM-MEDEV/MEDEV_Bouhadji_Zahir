@@ -1,0 +1,9 @@
+joueur
+maison
+librairie
+loup
+violon
+giraffe
+poire
+pomme
+sirop
