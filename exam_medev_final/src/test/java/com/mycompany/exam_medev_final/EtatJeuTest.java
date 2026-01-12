@@ -4,93 +4,64 @@
  */
 package com.mycompany.exam_medev_final;
 
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.AfterAll;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.BeforeAll;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
 
-/**
- *
- * @author user
- */
 public class EtatJeuTest {
-    
-    public EtatJeuTest() {
-    }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
+
+    @Test
+    public void testJouerTourValidLetter() {
+        EtatJeu jeu = new EtatJeu("ABC", 5);
+        boolean res = jeu.jouerTour('A');
+        assertTrue(res);
+        assertTrue(jeu.getEtat().getLettresProposees().contains('A'));
+        assertEquals("A _ _", jeu.getEtat().getMotAffiche());
     }
 
-    /**
-     * Test of jouerTour method, of class EtatJeu.
-     */
     @Test
-    public void testJouerTour() {
-        System.out.println("jouerTour");
-        char lettre = ' ';
-        EtatJeu instance = null;
-        boolean expResult = false;
-        boolean result = instance.jouerTour(lettre);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testRepeatedLetterDoesNotIncreaseErrors() {
+        EtatJeu jeu = new EtatJeu("WORD", 3);
+        assertFalse(jeu.jouerTour('Z'));
+        int erreurs = jeu.getEtat().getErreursCommises();
+        assertEquals(1, erreurs);
+        assertFalse(jeu.jouerTour('Z'));
+        assertEquals(erreurs, jeu.getEtat().getErreursCommises());
     }
 
-    /**
-     * Test of estGagne method, of class EtatJeu.
-     */
     @Test
-    public void testEstGagne() {
-        System.out.println("estGagne");
-        EtatJeu instance = null;
-        boolean expResult = false;
-        boolean result = instance.estGagne();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testInvalidLetterThrows() {
+        EtatJeu jeu = new EtatJeu("A", 3);
+        assertThrows(IllegalArgumentException.class, () -> jeu.jouerTour('1'));
+        assertThrows(IllegalArgumentException.class, () -> jeu.jouerTour('!'));
     }
 
-    /**
-     * Test of estPerdu method, of class EtatJeu.
-     */
     @Test
-    public void testEstPerdu() {
-        System.out.println("estPerdu");
-        EtatJeu instance = null;
-        boolean expResult = false;
-        boolean result = instance.estPerdu();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testVictoryDetectionWithRepeatedLetters() {
+        EtatJeu jeu = new EtatJeu("ANNA", 5);
+        assertTrue(jeu.jouerTour('A'));
+        assertTrue(jeu.jouerTour('N'));
+        assertTrue(jeu.estGagne());
+        assertFalse(jeu.estPerdu());
     }
 
-    /**
-     * Test of getEtat method, of class EtatJeu.
-     */
     @Test
-    public void testGetEtat() {
-        System.out.println("getEtat");
-        EtatJeu instance = null;
-        TourDeJeu expResult = null;
-        TourDeJeu result = instance.getEtat();
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testDefeatDetection() {
+        EtatJeu jeu = new EtatJeu("B", 1);
+        assertFalse(jeu.jouerTour('A'));
+        assertTrue(jeu.estPerdu());
     }
-    
+
+    @Test
+    public void testNonRegressionMainRules() {
+        EtatJeu jeu = new EtatJeu("CODE", 2);
+        assertTrue(jeu.jouerTour('C'));
+        assertFalse(jeu.jouerTour('X'));
+        assertEquals(1, jeu.getEtat().getErreursCommises());
+        assertFalse(jeu.jouerTour('X'));
+        assertEquals(1, jeu.getEtat().getErreursCommises());
+        assertThrows(IllegalArgumentException.class, () -> jeu.jouerTour('3'));
+    }
 }
